@@ -5,7 +5,7 @@ export const addBooks = async (req, res, next) => {
     try {
         const newBook = new Library(req.body)
         const savedBook = await newBook.save()
-        res.status(201).json('Add books')
+        res.status(201).json(savedBook)
     } catch (error) {
         next(error)
     }
