@@ -5,7 +5,7 @@ export const addReview = async (req, res, next) => {
     try {
         const newReview = new Review(req.body)
         const savedReview = await newReview.save()
-        res.status(201).json(savedReview)
+        res.status(201).json('The Catcher in the Rye')
     } catch (error) {
         next(error)
     }
