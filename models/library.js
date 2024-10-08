@@ -9,7 +9,8 @@ const librarySchema = new Schema ({
     genre:{type:String},
     available:{type:Boolean, default:true},
     summary: {type: String},
-    cover:{type: String}
+    cover:{type: String},
+    img_url:{type:String}
 });
 
 export const Library = model('Book', librarySchema)
