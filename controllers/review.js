@@ -32,8 +32,8 @@ export const getReviewById = async (req, res, next) => {
 
 export const updateReviews = async (req, res, next) => {
     try {
-        const update = await Review.findByIdAndUpdate(req.params.id, req.body, { new: true })
-        res.status(201).json(update)
+        const upReviews = await Review.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        res.status(201).json(upReviews)
     } catch (error) {
         next(error)
     }
@@ -41,8 +41,8 @@ export const updateReviews = async (req, res, next) => {
 
 export const deleteReviews = async (req, res, next) => {
     try {
-        const del = await Review.findByIdAndDelete(req.params.id)
-        res.status(201).json(del)
+        const delReviews = await Review.findByIdAndDelete(req.params.id)
+        res.status(201).json(delReviews)
     } catch (error) {
         next(error)
     }

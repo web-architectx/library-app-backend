@@ -1,8 +1,8 @@
-import { required } from "joi";
+// import { required } from "joi";
 import { Schema, model } from "mongoose";
 
 const authorSchema = new Schema({
-    name: { type: String, required: true },
+    name: { type: String},
     bio:{type:String}
 });
 

@@ -14,7 +14,7 @@ export const addBooks = async (req, res, next) => {
 export const getAllBooks = async (req, res, next) => {
     try {
         const AllBooks = await Library.find()
-        res.status(201).json(getAllBooks)
+        res.status(201).json(AllBooks)
     } catch (error) {
         next(error)
 
