@@ -1,4 +1,4 @@
-import Joi from "joi"
+import Joi from "joi";
 
 const authorValidation = Joi.object({
     name: Joi.string().required(),
@@ -6,11 +6,15 @@ const authorValidation = Joi.object({
 
 });
 
-export const authorValidate = (req,res,next) => {
+export const authorValidate = (req, res, next) => {
     try {
-        const {error} = authorValidation.validate(req.body)
-        res.status(400).json(error)
+        const { error } = authorValidation.validate(req.body)
+        if (error) {
+         return res.status(400).json(error)
+        } else {
+            next();
+        }
     } catch (error) {
-         next(error) 
-    }    
+        next(error)
+    }
 };
