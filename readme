@@ -1,0 +1,60 @@
+ # Library Management API
+ A full-stack library management system for managing books. The backend is built using Node.js, Express, and MongoDB.
+
+
+# Features
+CRUD Operations: Manage books in the library.
+Validation: Input validation using Joi.
+MongoDB Integration: Persist data with MongoDB.
+
+
+# Tech Stack
+Node.js
+Express
+MongoDB & Mongoose
+Joi for validation
+
+# Installation
+
+1. Clone the repository:
+
+git clone https://github.com/your-username/library-management.git
+cd library-management
+
+2. Install dependencies:
+npm install
+
+3. Environment Variables
+Create a .env file in the root directory with the following variables:
+
+LIBRARY_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/<dbname>
+PORT=3002
+
+# Running the Application
+Start the server: "npm run dev"
+The server will run at http://localhost:3002.
+
+# API Endpoints
+
+POST "/library" - Add a new book
+POST "/author" - Add a new author
+POST "/review" - Add review
+
+GET "/library" - Get all books
+GET "/author" - Get all authors
+GET "/review" - Get all reviews
+
+GET "/books/:id" - Get a book by ID
+GET "/author/:id" - Get an author by ID
+GET "/review/:id" - Get review by ID
+
+PATCH "/library/:id" - Update a book by ID
+PATCH "/author/:id" - Update a author by ID
+PATCH "/review/:id" - Update a review by ID
+
+DELETE "/library/:id" - Delete a book by ID
+DELETE "/author/:id" - Delete a author by ID
+DELETE "/review/:id" - Delete a review by ID
+
+
+
