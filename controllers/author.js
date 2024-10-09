@@ -1,8 +1,13 @@
+import { authorValidate } from "../middleware/author.js"
 import { AuthorModel } from "../models/author.js"
 
 
 export const addAuthor = async (req, res, next) => {
     try {
+        // const { error } = authorValidate.validate(req.body)
+        // if (error) {
+        //     return res.status(400).json(error)
+        // }
         const newAuthor = new AuthorModel(req.body)
         const savedAuthor = await newAuthor.save()
         res.status(201).json(savedAuthor)
