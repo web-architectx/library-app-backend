@@ -5,7 +5,7 @@ export const addReview = async (req, res, next) => {
     try {
         const newReview = new Review(req.body)
         const savedReview = await newReview.save()
-        res.status(201).json('The Catcher in the Rye')
+        res.status(201).json(savedReview)
     } catch (error) {
         next(error)
     }
@@ -14,7 +14,7 @@ export const addReview = async (req, res, next) => {
 export const getAllReviews = async (req, res, next) => {
     try {
         const getAllreviews = await Review.find()
-        res.status(201).json(getAllReviews)
+        res.status(201).json(getAllreviews)
     } catch (error) {
         next(error)
 
