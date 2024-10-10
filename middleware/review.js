@@ -10,7 +10,7 @@ export const  reviewValidate = (req,res,next) => {
     try {
         const {error} = reviewValidation.validate(req.body)
        if (error) {
-         res.status(400).json(error)
+         res.status(422).json(error)
        } else {
         next() 
        }
