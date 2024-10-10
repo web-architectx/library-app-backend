@@ -5,13 +5,15 @@ const libraryValidation = Joi.object({
     author: Joi.string().required(),
     publishedYear: Joi.number(),
     genre: Joi.string().optional(),
+    summary: Joi.string(),
+    img_url: Joi.string()
 });
 
 export const libraryValidate = (req, res, next) => {
     try {
-        const { error } = libraryValidation.validate(req.body)
+        const { error} = libraryValidation.validate(req.body)
         if (error) {
-          return  res.status(400).json(error)
+          return  res.status(422).json(error)
         } else {
             next()
         }

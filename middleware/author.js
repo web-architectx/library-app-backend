@@ -8,9 +8,9 @@ const authorValidation = Joi.object({
 
 export const authorValidate = (req, res, next) => {
     try {
-        const { error } = authorValidation.validate(req.body)
+        const { error} = authorValidation.validate(req.body)
         if (error) {
-         return res.status(400).json(error)
+         return res.status(422).json(error)
         } else {
             next();
         }
