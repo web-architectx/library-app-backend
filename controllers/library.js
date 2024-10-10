@@ -14,7 +14,7 @@ export const addBooks = async (req, res, next) => {
 export const getAllBooks = async (req, res, next) => {
     try {
         const AllBooks = await Library.find()
-        res.status(201).json(AllBooks)
+        res.status(200).json(AllBooks)
     } catch (error) {
         next(error)
 
@@ -24,7 +24,7 @@ export const getAllBooks = async (req, res, next) => {
 export const getBookById = async (req, res, next) => {
     try {
         const idBook = await Library.findById(req.params.id)
-        res.status(201).json(idBook)
+        res.status(200).json(idBook)
     } catch (error) {
         next(error)
     }
@@ -33,7 +33,7 @@ export const getBookById = async (req, res, next) => {
 export const updateBooks = async (req, res, next) => {
     try {
         const update = await Library.findByIdAndUpdate(req.params.id, req.body, { new: true })
-        res.status(201).json(update)
+        res.status(200).json(update)
     } catch (error) {
         next(error)
     }
@@ -42,7 +42,7 @@ export const updateBooks = async (req, res, next) => {
 export const deleteBooks = async (req, res, next) => {
     try {
         const del = await Library.findByIdAndDelete(req.params.id)
-        res.status(201).json(del)
+        res.status(200).json(del)
     } catch (error) {
         next(error)
     }
