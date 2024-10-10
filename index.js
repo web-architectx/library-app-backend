@@ -10,12 +10,13 @@ import cors from 'cors'
 await mongoose.connect(process.env.LIBRARY_URI)
 
 const app = express()
+app.use(cors())
 
 app.use(express.json())
 app.use(libraryRouter)
 app.use(reviewRouter)
 app.use(authorRouter)
-app.use(cors())
+
 
 
 const port = 3002
