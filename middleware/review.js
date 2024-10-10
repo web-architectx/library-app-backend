@@ -3,13 +3,17 @@ import Joi from "joi";
 const reviewValidation = Joi.object({
 rating: Joi.number(),
 comment: Joi.string(),
-book: Joi.string().optional(),
+book: Joi.string(),
 });
 
 export const  reviewValidate = (req,res,next) => {
     try {
         const {error} = reviewValidation.validate(req.body)
-        res.status(400).json(error)
+       if (error) {
+         res.status(400).json(error)
+       } else {
+        next() 
+       }
     } catch (error) {
         next(error)     
     }
