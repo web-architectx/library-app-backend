@@ -2,7 +2,7 @@
 import { Schema, model, Types } from "mongoose";
 
 const librarySchema = new Schema ({
-    title: {type:String, required:true},
+    title: {type:String},
     author:{type:String},
     //  author: {type: Types.ObjectId, ref: 'Author'},
     publishedYear: {type:Number},
