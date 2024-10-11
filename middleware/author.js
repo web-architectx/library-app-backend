@@ -1,7 +1,7 @@
 import Joi from "joi";
 
 const authorValidation = Joi.object({
-    name: Joi.string().required(),
+    name: Joi.string(),
     bio: Joi.string(),
 
 });

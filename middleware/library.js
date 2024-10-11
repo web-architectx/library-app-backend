@@ -1,8 +1,8 @@
 import Joi from "joi";
 
 const libraryValidation = Joi.object({
-    title: Joi.string().required(),
-    author: Joi.string().required(),
+    title: Joi.string(),
+    author: Joi.string(),
     publishedYear: Joi.number(),
     genre: Joi.string().optional(),
     summary: Joi.string(),
